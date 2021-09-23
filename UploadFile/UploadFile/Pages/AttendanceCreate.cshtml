@@ -1,0 +1,44 @@
+﻿@page
+@model UploadFile.Pages.AttendanceCreateModel
+
+@{
+    ViewData["Title"] = "AttendanceCreateModel";
+}
+
+<h1>Attendance Document Create</h1>
+
+<h4>Information</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Attendances.Number" class="control-label"></label>
+                <input asp-for="Attendances.Number" class="form-control" />
+                <span asp-validation-for="Attendances.Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Attendances.Name" class="control-label"></label>
+                <input asp-for="Attendances.Name" class="form-control" />
+                <span asp-validation-for="Attendances.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Attendances.Date" class="control-label"></label>
+                <input asp-for="Attendances.Date" class="form-control" />
+                <span asp-validation-for="Attendances.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-outline-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="AttendanceIndex">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

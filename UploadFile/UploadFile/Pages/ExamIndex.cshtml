@@ -1,0 +1,69 @@
+﻿@page
+@model ExamIndexModel
+@{
+    ViewData["Title"] = "ExamIndexModel";
+}
+
+
+<h1>Exam Document Management</h1>
+
+<p>
+    <a asp-page="ExamCreate">Document Details</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Exams[0].Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Exams[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Exams[0].Date)
+            </th>
+            <th>
+            <th>
+                Upload
+            </th>
+            <th>Download</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Exams)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+            <td>
+                <a asp-page="ExamUpload" asp-route-id="@item.Id">Upload Document</a>
+            </td>
+            <td>
+                @if (item.Attachment != null)
+                {
+                    <form asp-page-handler="Download" method="post" asp-route-id="@item.Id">
+                        <input type="submit" class="btn btn-outline-dark" value="Download">
+                    </form>
+                }
+            </td>
+            <td>
+                @if (item.Attachment != null)
+                {
+                    <form asp-page-handler="Delete" method="post" asp-route-id="@item.Id">
+                        <input type="submit" class="btn btn-outline-danger" value="Delete">
+                    </form>
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,45 @@
+﻿@page
+@model UploadFile.Pages.ExamCreateModel
+
+@{
+    ViewData["Title"] = "ExamCreateModel";
+}
+
+<h1>Exam Document Create</h1>
+
+<h4>Information</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Exams.Number" class="control-label"></label>
+                <input asp-for="Exams.Number" class="form-control" />
+                <span asp-validation-for="Exams.Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Exams.Name" class="control-label"></label>
+                <input asp-for="Exams.Name" class="form-control" />
+                <span asp-validation-for="Exams.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Exams.Date" class="control-label"></label>
+                <input asp-for="Exams.Date" class="form-control" />
+                <span asp-validation-for="Exams.Date" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-outline-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="ExamIndex">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
