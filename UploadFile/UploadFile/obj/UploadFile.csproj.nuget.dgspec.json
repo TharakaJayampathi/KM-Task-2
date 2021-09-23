@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tharaka Jayampathi\\Desktop\\Knowledge Management Implementation 2\\Task 2\\UploadFile\\UploadFile\\UploadFile.csproj": {}
+    "C:\\Users\\Tharaka Jayampathi\\Desktop\\Git Implementaion 3\\KM-Task-2\\UploadFile\\UploadFile\\UploadFile.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tharaka Jayampathi\\Desktop\\Knowledge Management Implementation 2\\Task 2\\UploadFile\\UploadFile\\UploadFile.csproj": {
+    "C:\\Users\\Tharaka Jayampathi\\Desktop\\Git Implementaion 3\\KM-Task-2\\UploadFile\\UploadFile\\UploadFile.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tharaka Jayampathi\\Desktop\\Knowledge Management Implementation 2\\Task 2\\UploadFile\\UploadFile\\UploadFile.csproj",
+        "projectUniqueName": "C:\\Users\\Tharaka Jayampathi\\Desktop\\Git Implementaion 3\\KM-Task-2\\UploadFile\\UploadFile\\UploadFile.csproj",
         "projectName": "UploadFile",
-        "projectPath": "C:\\Users\\Tharaka Jayampathi\\Desktop\\Knowledge Management Implementation 2\\Task 2\\UploadFile\\UploadFile\\UploadFile.csproj",
+        "projectPath": "C:\\Users\\Tharaka Jayampathi\\Desktop\\Git Implementaion 3\\KM-Task-2\\UploadFile\\UploadFile\\UploadFile.csproj",
         "packagesPath": "C:\\Users\\Tharaka Jayampathi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tharaka Jayampathi\\Desktop\\Knowledge Management Implementation 2\\Task 2\\UploadFile\\UploadFile\\obj\\",
+        "outputPath": "C:\\Users\\Tharaka Jayampathi\\Desktop\\Git Implementaion 3\\KM-Task-2\\UploadFile\\UploadFile\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
