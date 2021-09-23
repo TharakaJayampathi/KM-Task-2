@@ -1,26 +1,26 @@
 ﻿@page
-@model EmployeeIndexModel
+@model TimeTableIndexModel
 @{
-    ViewData["Title"] = "Employee";
+    ViewData["Title"] = "Time Table";
 }
 
 
-<h1>Employee Document Management</h1>
+<h1>Time Table Document Management</h1>
 
 <p>
-    <a asp-page="EmployeeCreate">Document Details</a>
+    <a asp-page="TimeTableCreate">Document Details</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Employees[0].Number)
+                @Html.DisplayNameFor(model => model.TimeTables[0].Number)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employees[0].Name)
+                @Html.DisplayNameFor(model => model.TimeTables[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Employees[0].Date)
+                @Html.DisplayNameFor(model => model.TimeTables[0].Date)
             </th>
             <th>
                 Upload
@@ -30,7 +30,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Employees)
+        @foreach (var item in Model.TimeTables)
         {
         <tr>
             <td>
@@ -43,7 +43,7 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                <a asp-page="EmployeeUpload" asp-route-id="@item.Id">Upload Document</a>
+                <a asp-page="TimeTableUpload" asp-route-id="@item.Id">Upload Document</a>
             </td>
             <td>
                 @if (item.Attachment != null)

@@ -541,3 +541,6 @@ C:\Users\Tharaka Jayampathi\Desktop\Knowledge Management Implementation 2\Task 2
 C:\Users\Tharaka Jayampathi\Desktop\Knowledge Management Implementation 2\Task 2\UploadFile\UploadFile\obj\Debug\netcoreapp3.1\Razor\Pages\LectureMaterialCreate.cshtml.g.cs
 C:\Users\Tharaka Jayampathi\Desktop\Knowledge Management Implementation 2\Task 2\UploadFile\UploadFile\obj\Debug\netcoreapp3.1\Razor\Pages\LectureMaterialIndex.cshtml.g.cs
 C:\Users\Tharaka Jayampathi\Desktop\Knowledge Management Implementation 2\Task 2\UploadFile\UploadFile\obj\Debug\netcoreapp3.1\Razor\Pages\LectureMaterialUpload.cshtml.g.cs
+C:\Users\Tharaka Jayampathi\Desktop\Knowledge Management Implementation 2\Task 2\UploadFile\UploadFile\obj\Debug\netcoreapp3.1\Razor\Pages\TimeTableCreate.cshtml.g.cs
+C:\Users\Tharaka Jayampathi\Desktop\Knowledge Management Implementation 2\Task 2\UploadFile\UploadFile\obj\Debug\netcoreapp3.1\Razor\Pages\TimeTableIndex.cshtml.g.cs
+C:\Users\Tharaka Jayampathi\Desktop\Knowledge Management Implementation 2\Task 2\UploadFile\UploadFile\obj\Debug\netcoreapp3.1\Razor\Pages\TimeTableUpload.cshtml.g.cs
