@@ -23,9 +23,23 @@ namespace UploadFile.Pages
         }
 
         public IList<Attendances> Attendances { get; set; }
-        public void OnGet()
+
+        public void OnGet(string searchby, string search)
         {
-            Attendances = _context.Attendances.ToList();
+            if (searchby == "Reference")
+            {
+                IEnumerable<Attendances> objList = _context.Attendances;
+                Attendances = _context.Attendances.Where(x => x.Reference == search || search == null).ToList();
+
+            }
+
+            else
+            {
+                IEnumerable<Attendances> objList = _context.Attendances;
+                Attendances = _context.Attendances.Where(x => x.Name == search || search == null).ToList();
+
+            }
+
         }
 
         public async Task<IActionResult> OnPostDownloadAsync(int? id)

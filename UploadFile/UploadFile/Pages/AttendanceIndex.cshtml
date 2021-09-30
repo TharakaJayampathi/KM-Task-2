@@ -10,11 +10,25 @@
 <p>
     <a asp-page="AttendanceCreate">Document Details</a>
 </p>
+
+<p>
+    @using (Html.BeginForm("AttendanceIndex", "AttendanceIndex", FormMethod.Get))
+    {
+        <b>Search</b>@Html.RadioButton("Searchby", "Reference", true)<b>Reference</b>
+        @Html.RadioButton("Searchby", "Name")<b>Name</b>
+        @Html.TextBox("Search")<input type="submit" value="Search" />
+
+    }
+</p>
+
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Attendances[0].Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Attendances[0].Reference)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Attendances[0].Name)
@@ -35,6 +49,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reference)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
