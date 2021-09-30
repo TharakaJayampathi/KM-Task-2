@@ -23,9 +23,23 @@ namespace UploadFile.Pages
         }
 
         public IList<Exams> Exams { get; set; }
-        public void OnGet()
+
+        public void OnGet(string searchby, string search)
         {
-            Exams = _context.Exams.ToList();
+            if (searchby == "Reference")
+            {
+                IEnumerable<Exams> objList = _context.Exams;
+                Exams = _context.Exams.Where(x => x.Reference == search || search == null).ToList();
+
+            }
+
+            else
+            {
+                IEnumerable<Exams> objList = _context.Exams;
+                Exams = _context.Exams.Where(x => x.Name == search || search == null).ToList();
+
+            }
+
         }
 
         public async Task<IActionResult> OnPostDownloadAsync(int? id)
