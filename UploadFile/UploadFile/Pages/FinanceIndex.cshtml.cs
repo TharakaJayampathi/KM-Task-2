@@ -23,9 +23,23 @@ namespace UploadFile.Pages
         }
 
         public IList<Finances> Finances { get; set; }
-        public void OnGet()
+
+        public void OnGet(string searchby, string search)
         {
-            Finances = _context.Finances.ToList();
+            if (searchby == "Reference")
+            {
+                IEnumerable<Finances> objList = _context.Finances;
+                Finances = _context.Finances.Where(x => x.Reference == search || search == null).ToList();
+
+            }
+
+            else
+            {
+                IEnumerable<Finances> objList = _context.Finances;
+                Finances = _context.Finances.Where(x => x.Name == search || search == null).ToList();
+
+            }
+
         }
 
         public async Task<IActionResult> OnPostDownloadAsync(int? id)
