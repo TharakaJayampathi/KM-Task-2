@@ -23,9 +23,23 @@ namespace UploadFile.Pages
         }
 
         public IList<Employees> Employees { get; set; }
-        public void OnGet()
+
+        public void OnGet(string searchby, string search)
         {
-            Employees = _context.Employees.ToList();
+            if (searchby == "Reference")
+            {
+                IEnumerable<Employees> objList = _context.Employees;
+                Employees = _context.Employees.Where(x => x.Reference == search || search == null).ToList();
+
+            }
+
+            else
+            {
+                IEnumerable<Employees> objList = _context.Employees;
+                Employees = _context.Employees.Where(x => x.Name == search || search == null).ToList();
+
+            }
+
         }
 
         public async Task<IActionResult> OnPostDownloadAsync(int? id)
