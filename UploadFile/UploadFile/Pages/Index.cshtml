@@ -15,7 +15,7 @@
 <p>
     @using (Html.BeginForm("Index", "Index", FormMethod.Get))
     {
-        <b>Search</b>@Html.RadioButton("Searchby", "Name", true)<b>Name</b>
+        <b>Search</b>@Html.RadioButton("Searchby", "Reference", true)<b>Reference</b>
         @Html.RadioButton("Searchby", "Name")<b>Name</b>
         @Html.TextBox("Search")<input type="submit" value="Search" />
 
@@ -29,6 +29,9 @@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Students[0].Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students[0].Reference)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Students[0].Name)
@@ -49,6 +52,9 @@
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reference)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Name)

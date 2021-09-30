@@ -31,23 +31,19 @@ namespace UploadFile.Pages
 
         public void OnGet(string searchby, string search)
         {
-            if (searchby == "Name")
+            if (searchby == "Reference")
             {
                 IEnumerable<Students> objList = _context.Students;
-                Students = _context.Students.Where(x => x.Name == search || search == null).ToList();
-                
+                Students = _context.Students.Where(x => x.Reference == search || search == null).ToList();
+
             }
 
             else
             {
                 IEnumerable<Students> objList = _context.Students;
                 Students = _context.Students.Where(x => x.Name == search || search == null).ToList();
-                
+
             }
-
-            //IEnumerable<Student> objList = _db.Students;
-
-            //return View(objList);
 
         }
 
