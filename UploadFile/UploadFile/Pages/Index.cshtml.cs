@@ -23,9 +23,32 @@ namespace UploadFile.Pages
         }
 
         public IList<Students> Students { get; set; }
-        public void OnGet()
+
+        //public void OnGet()
+        //{
+        //    Students = _context.Students.ToList();
+        //}
+
+        public void OnGet(string searchby, string search)
         {
-            Students = _context.Students.ToList();
+            if (searchby == "Name")
+            {
+                IEnumerable<Students> objList = _context.Students;
+                Students = _context.Students.Where(x => x.Name == search || search == null).ToList();
+                
+            }
+
+            else
+            {
+                IEnumerable<Students> objList = _context.Students;
+                Students = _context.Students.Where(x => x.Name == search || search == null).ToList();
+                
+            }
+
+            //IEnumerable<Student> objList = _db.Students;
+
+            //return View(objList);
+
         }
 
         public async Task<IActionResult> OnPostDownloadAsync(int? id)

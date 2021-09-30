@@ -9,7 +9,7 @@ namespace UploadFile.Data
     {
         public int Id { get; set; }
         public int Number { get; set; }
-
+        public string Reference { get; set; }
         public string Name { get; set; }
 
         public DateTime Date { get; set; }

@@ -23,9 +23,23 @@ namespace UploadFile.Pages
         }
 
         public IList<TimeTables> TimeTables { get; set; }
-        public void OnGet()
+
+        public void OnGet(string searchby, string search)
         {
-            TimeTables = _context.TimeTables.ToList();
+            if (searchby == "Reference")
+            {
+                IEnumerable<TimeTables> objList = _context.TimeTables;
+                TimeTables = _context.TimeTables.Where(x => x.Reference == search || search == null).ToList();
+
+            }
+
+            else
+            {
+                IEnumerable<TimeTables> objList = _context.TimeTables;
+                TimeTables = _context.TimeTables.Where(x => x.Name == search || search == null).ToList();
+
+            }
+
         }
 
         public async Task<IActionResult> OnPostDownloadAsync(int? id)

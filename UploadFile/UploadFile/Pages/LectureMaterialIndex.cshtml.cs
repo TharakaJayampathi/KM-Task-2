@@ -23,9 +23,23 @@ namespace UploadFile.Pages
         }
 
         public IList<LectureMaterials> LectureMaterials { get; set; }
-        public void OnGet()
+
+        public void OnGet(string searchby, string search)
         {
-            LectureMaterials = _context.LectureMaterials.ToList();
+            if (searchby == "Reference")
+            {
+                IEnumerable<LectureMaterials> objList = _context.LectureMaterials;
+                LectureMaterials = _context.LectureMaterials.Where(x => x.Reference == search || search == null).ToList();
+
+            }
+
+            else
+            {
+                IEnumerable<LectureMaterials> objList = _context.LectureMaterials;
+                LectureMaterials = _context.LectureMaterials.Where(x => x.Name == search || search == null).ToList();
+
+            }
+
         }
 
         public async Task<IActionResult> OnPostDownloadAsync(int? id)
